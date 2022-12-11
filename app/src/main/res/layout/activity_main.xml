@@ -11,19 +11,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="ADIVINA"
+        android:text="BUENA SUERTE"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtCaracter00"
+        android:id="@+id/Fila1Letra1"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
@@ -31,296 +31,296 @@
         app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
 
     <TextView
-        android:id="@+id/txtCaracter01"
+        android:id="@+id/Fila1Letra2"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter00"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter00" />
+        app:layout_constraintStart_toEndOf="@+id/Fila1Letra1"
+        app:layout_constraintTop_toTopOf="@+id/Fila1Letra1" />
 
     <TextView
-        android:id="@+id/txtCaracter02"
+        android:id="@+id/Fila1Letra3"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter01"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter01" />
+        app:layout_constraintStart_toEndOf="@+id/Fila1Letra2"
+        app:layout_constraintTop_toTopOf="@+id/Fila1Letra2" />
 
     <TextView
-        android:id="@+id/txtCaracter03"
+        android:id="@+id/Fila1Letra4"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter02"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter02" />
+        app:layout_constraintStart_toEndOf="@+id/Fila1Letra3"
+        app:layout_constraintTop_toTopOf="@+id/Fila1Letra3" />
 
     <TextView
-        android:id="@+id/txtCaracter04"
+        android:id="@+id/Fila1Letra5"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter03"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter03" />
+        app:layout_constraintStart_toEndOf="@+id/Fila1Letra4"
+        app:layout_constraintTop_toTopOf="@+id/Fila1Letra4" />
 
     <TextView
-        android:id="@+id/txtCaracter10"
+        android:id="@+id/Fila2Letra1"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCaracter00" />
+        app:layout_constraintTop_toBottomOf="@+id/Fila1Letra1" />
 
     <TextView
-        android:id="@+id/txtCaracter11"
+        android:id="@+id/Fila2Letra2"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter10"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter10" />
+        app:layout_constraintStart_toEndOf="@+id/Fila2Letra1"
+        app:layout_constraintTop_toTopOf="@+id/Fila2Letra1" />
 
     <TextView
-        android:id="@+id/txtCaracter12"
+        android:id="@+id/Fila2Letra3"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter11"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter11" />
+        app:layout_constraintStart_toEndOf="@+id/Fila2Letra2"
+        app:layout_constraintTop_toTopOf="@+id/Fila2Letra2" />
 
     <TextView
-        android:id="@+id/txtCaracter13"
+        android:id="@+id/Fila2Letra4"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter12"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter12" />
+        app:layout_constraintStart_toEndOf="@+id/Fila2Letra3"
+        app:layout_constraintTop_toTopOf="@+id/Fila2Letra3" />
 
     <TextView
-        android:id="@+id/txtCaracter14"
+        android:id="@+id/Fila2Letra5"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter13"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter13" />
+        app:layout_constraintStart_toEndOf="@+id/Fila2Letra4"
+        app:layout_constraintTop_toTopOf="@+id/Fila2Letra4" />
 
     <TextView
-        android:id="@+id/txtCaracter20"
+        android:id="@+id/Fila3Letra1"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCaracter10" />
+        app:layout_constraintTop_toBottomOf="@+id/Fila2Letra1" />
 
     <TextView
-        android:id="@+id/txtCaracter21"
+        android:id="@+id/Fila3Letra2"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter20"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter20" />
+        app:layout_constraintStart_toEndOf="@+id/Fila3Letra1"
+        app:layout_constraintTop_toTopOf="@+id/Fila3Letra1" />
 
     <TextView
-        android:id="@+id/txtCaracter22"
+        android:id="@+id/Fila3Letra3"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter21"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter21" />
+        app:layout_constraintStart_toEndOf="@+id/Fila3Letra2"
+        app:layout_constraintTop_toTopOf="@+id/Fila3Letra2" />
 
     <TextView
-        android:id="@+id/txtCaracter23"
+        android:id="@+id/Fila3Letra4"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter22"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter22" />
+        app:layout_constraintStart_toEndOf="@+id/Fila3Letra3"
+        app:layout_constraintTop_toTopOf="@+id/Fila3Letra3" />
 
     <TextView
-        android:id="@+id/txtCaracter24"
+        android:id="@+id/Fila3Letra5"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter23"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter23" />
+        app:layout_constraintStart_toEndOf="@+id/Fila3Letra4"
+        app:layout_constraintTop_toTopOf="@+id/Fila3Letra4" />
 
     <TextView
-        android:id="@+id/txtCaracter30"
+        android:id="@+id/Fila4Letra1"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCaracter20" />
+        app:layout_constraintTop_toBottomOf="@+id/Fila3Letra1" />
 
     <TextView
-        android:id="@+id/txtCaracter31"
+        android:id="@+id/Fila4Letra2"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter30"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter30" />
+        app:layout_constraintStart_toEndOf="@+id/Fila4Letra1"
+        app:layout_constraintTop_toTopOf="@+id/Fila4Letra1" />
 
     <TextView
-        android:id="@+id/txtCaracter32"
+        android:id="@+id/Fila4Letra3"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter31"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter31" />
+        app:layout_constraintStart_toEndOf="@+id/Fila4Letra2"
+        app:layout_constraintTop_toTopOf="@+id/Fila4Letra2" />
 
     <TextView
-        android:id="@+id/txtCaracter33"
+        android:id="@+id/Fila4Letra4"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter32"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter32" />
+        app:layout_constraintStart_toEndOf="@+id/Fila4Letra3"
+        app:layout_constraintTop_toTopOf="@+id/Fila4Letra3" />
 
     <TextView
-        android:id="@+id/txtCaracter34"
+        android:id="@+id/Fila4Letra5"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter33"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter33" />
+        app:layout_constraintStart_toEndOf="@+id/Fila4Letra4"
+        app:layout_constraintTop_toTopOf="@+id/Fila4Letra4" />
 
     <TextView
-        android:id="@+id/txtCaracter40"
+        android:id="@+id/Fila5Letra1"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCaracter30" />
+        app:layout_constraintTop_toBottomOf="@+id/Fila4Letra1" />
 
     <TextView
-        android:id="@+id/txtCaracter41"
+        android:id="@+id/Fila5Letra2"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter40"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter40" />
+        app:layout_constraintStart_toEndOf="@+id/Fila5Letra1"
+        app:layout_constraintTop_toTopOf="@+id/Fila5Letra1" />
 
     <TextView
-        android:id="@+id/txtCaracter42"
+        android:id="@+id/Fila5Letra3"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter41"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter41" />
+        app:layout_constraintStart_toEndOf="@+id/Fila5Letra2"
+        app:layout_constraintTop_toTopOf="@+id/Fila5Letra2" />
 
     <TextView
-        android:id="@+id/txtCaracter43"
+        android:id="@+id/Fila5Letra4"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter42"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter42" />
+        app:layout_constraintStart_toEndOf="@+id/Fila5Letra3"
+        app:layout_constraintTop_toTopOf="@+id/Fila5Letra3" />
 
     <TextView
-        android:id="@+id/txtCaracter44"
+        android:id="@+id/Fila5Letra5"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_view_textview"
+        android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toEndOf="@+id/txtCaracter43"
-        app:layout_constraintTop_toTopOf="@+id/txtCaracter43" />
+        app:layout_constraintStart_toEndOf="@+id/Fila5Letra4"
+        app:layout_constraintTop_toTopOf="@+id/Fila5Letra4" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewTeclado"

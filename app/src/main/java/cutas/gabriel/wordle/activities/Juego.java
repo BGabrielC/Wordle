@@ -2,8 +2,6 @@ package cutas.gabriel.wordle.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +36,7 @@ public class Juego extends AppCompatActivity {
     String palabraRandom="";
     int numCaracter =0;
     String InputUsuario ="";
+    Long inicio;
 
     public void hacerRecyclerTeclado(){
         recyclerView = findViewById(R.id.recyclerViewTeclado);
@@ -55,7 +54,11 @@ public class Juego extends AppCompatActivity {
                     if (Objects.requireNonNull(teclado.get(letra)).getColor().equals("#038b59")){
                         if(existePalabra()){
                             if(comprobarPalabra()){
+                                long fin = System.currentTimeMillis();
+                                double tiempo = (double) ((fin - inicio)/1000);
                                 Intent victoria = new Intent(Juego.this,Victoria.class);
+                                victoria.putExtra("tiempo", tiempo);
+                                victoria.putExtra("numCaracteres",numCaracter);
                                 startActivity(victoria);
                             }else{
                                 if(numCaracter!=29){
@@ -117,7 +120,7 @@ public class Juego extends AppCompatActivity {
                         if (InputUsuario.charAt(i) == palabraRandom.charAt(o)){
                             sacarTxtCaracter(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.acertado));
                         }else {
-                            sacarTxtCaracter(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.casi));
+                            sacarTxtCaracter(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.erroneo));
                         }
                     }
                 }
@@ -128,34 +131,22 @@ public class Juego extends AppCompatActivity {
         return false;
     }
     public boolean compruebaSiSeRepiteLetra(String cadena) {
-        // Convertimos la cadena a minúsculas
         cadena = cadena.toLowerCase();
-
-        // Creamos un mapa vacío para guardar el número de veces que se repite cada letra
         Map<Character, Integer> mapa = new HashMap<>();
-
-        // Iteramos a través de cada carácter en la cadena
         for (int i = 0; i < cadena.length(); i++) {
             char c = cadena.charAt(i);
-
-            // Si el mapa ya contiene la letra, aumentamos el contador para esa letra
             if (mapa.containsKey(c)) {
                 mapa.put(c, mapa.get(c) + 1);
             } else {
-                // Si no, añadimos la letra al mapa y le asignamos un contador de 1
                 mapa.put(c, 1);
             }
         }
 
-        // Iteramos a través de cada entrada en el mapa
         for (Map.Entry<Character, Integer> entrada : mapa.entrySet()) {
-            // Si el contador es mayor a 1, devolvemos true ya que se ha repetido la letra
             if (entrada.getValue() > 1) {
                 return true;
             }
         }
-
-        // Si llegamos hasta aquí, significa que ninguna letra se ha repetido, por lo que devolvemos false
         return false;
     };
 
@@ -167,11 +158,8 @@ public class Juego extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         realm = Realm.getDefaultInstance();
         realmPalabras = realm.where(Palabra.class).findAll();
-//        if (realmPalabras.size() != 0){
-//            realm.beginTransaction();
-//            realm.deleteAll();
-//            realm.commitTransaction();
-//        }
+        inicio = System.currentTimeMillis();
+
         if (realmPalabras.size() == 0){
             for (int i = 0; i < Utils.getWordsFirstPart().size(); i++) {
                 String temp = Utils.getWordsFirstPart().get(i);
@@ -234,55 +222,55 @@ public class Juego extends AppCompatActivity {
     public TextView sacarTxtCaracter(int num){
         switch (num) {
             case 0:
-                return findViewById(R.id.txtCaracter00);
+                return findViewById(R.id.Fila1Letra1);
             case 1:
-                return findViewById(R.id.txtCaracter01);
+                return findViewById(R.id.Fila1Letra2);
             case 2:
-                return findViewById(R.id.txtCaracter02);
+                return findViewById(R.id.Fila1Letra3);
             case 3:
-                return findViewById(R.id.txtCaracter03);
+                return findViewById(R.id.Fila1Letra4);
             case 4:
-                return findViewById(R.id.txtCaracter04);
+                return findViewById(R.id.Fila1Letra5);
             case 6:
-                return findViewById(R.id.txtCaracter10);
+                return findViewById(R.id.Fila2Letra1);
             case 7:
-                return findViewById(R.id.txtCaracter11);
+                return findViewById(R.id.Fila2Letra2);
             case 8:
-                return findViewById(R.id.txtCaracter12);
+                return findViewById(R.id.Fila2Letra3);
             case 9:
-                return findViewById(R.id.txtCaracter13);
+                return findViewById(R.id.Fila2Letra4);
             case 10:
-                return findViewById(R.id.txtCaracter14);
+                return findViewById(R.id.Fila2Letra5);
             case 12:
-                return findViewById(R.id.txtCaracter20);
+                return findViewById(R.id.Fila3Letra1);
             case 13:
-                return findViewById(R.id.txtCaracter21);
+                return findViewById(R.id.Fila3Letra2);
             case 14:
-                return findViewById(R.id.txtCaracter22);
+                return findViewById(R.id.Fila3Letra3);
             case 15:
-                return findViewById(R.id.txtCaracter23);
+                return findViewById(R.id.Fila3Letra4);
             case 16:
-                return findViewById(R.id.txtCaracter24);
+                return findViewById(R.id.Fila3Letra5);
             case 18:
-                return findViewById(R.id.txtCaracter30);
+                return findViewById(R.id.Fila4Letra1);
             case 19:
-                return findViewById(R.id.txtCaracter31);
+                return findViewById(R.id.Fila4Letra2);
             case 20:
-                return findViewById(R.id.txtCaracter32);
+                return findViewById(R.id.Fila4Letra3);
             case 21:
-                return findViewById(R.id.txtCaracter33);
+                return findViewById(R.id.Fila4Letra4);
             case 22:
-                return findViewById(R.id.txtCaracter34);
+                return findViewById(R.id.Fila4Letra5);
             case 24:
-                return findViewById(R.id.txtCaracter40);
+                return findViewById(R.id.Fila5Letra1);
             case 25:
-                return findViewById(R.id.txtCaracter41);
+                return findViewById(R.id.Fila5Letra2);
             case 26:
-                return findViewById(R.id.txtCaracter42);
+                return findViewById(R.id.Fila5Letra3);
             case 27:
-                return findViewById(R.id.txtCaracter43);
+                return findViewById(R.id.Fila5Letra4);
             case 28:
-                return findViewById(R.id.txtCaracter44);
+                return findViewById(R.id.Fila5Letra5);
             default:
                 return null;
         }
