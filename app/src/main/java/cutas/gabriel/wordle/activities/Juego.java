@@ -38,7 +38,7 @@ public class Juego extends AppCompatActivity {
     String InputUsuario ="";
     Long inicio;
 
-    public void hacerRecyclerTeclado(){
+    public void CreacionRecycler(){
         recyclerView = findViewById(R.id.recyclerViewTeclado);
         listaLetras = new ArrayList<Letra>(teclado.values());
         final TecladoAdapter tecladoAdapter = new TecladoAdapter(listaLetras, new OnItemClickListener() {
@@ -47,7 +47,7 @@ public class Juego extends AppCompatActivity {
                 if (letra.equals("⌫")){
                     if (Objects.requireNonNull(teclado.get(letra)).getColor().equals("#ba4b4b")){
                         numCaracter -= 1;
-                        sacarTxtCaracter(numCaracter).setText(" ");
+                        seleccionarLetra(numCaracter).setText(" ");
                         InputUsuario = InputUsuario.substring(0, InputUsuario.length() - 1);
                     }
                 }else if(letra.equals("➥")){
@@ -82,7 +82,7 @@ public class Juego extends AppCompatActivity {
                     }
                 }else if(!letra.equals(" ") && Objects.requireNonNull(teclado.get("➥")).getColor().equals("#878787")){
                     if(numCaracter != 29){
-                        sacarTxtCaracter(numCaracter).setText(letra);
+                        seleccionarLetra(numCaracter).setText(letra);
                         InputUsuario += letra;
                         numCaracter += 1;
                     }
@@ -97,7 +97,7 @@ public class Juego extends AppCompatActivity {
                 }else{
                     Objects.requireNonNull(teclado.get("⌫")).setColor("#ba4b4b");
                 }
-                hacerRecyclerTeclado();
+                CreacionRecycler();
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
@@ -118,9 +118,9 @@ public class Juego extends AppCompatActivity {
                 for (int o = 0; o < 5; o++){
                     if(i==o){
                         if (InputUsuario.charAt(i) == palabraRandom.charAt(o)){
-                            sacarTxtCaracter(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.acertado));
+                            seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.acertado));
                         }else {
-                            sacarTxtCaracter(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.erroneo));
+                            seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.erroneo));
                         }
                     }
                 }
@@ -216,10 +216,10 @@ public class Juego extends AppCompatActivity {
         teclado.put(" ",new Letra(" "));
         teclado.put("⌫",new Letra("⌫","#ba4b4b"));//"#ba4b4b"));
         teclado.put("➥",new Letra("➥","#038b59")); //"#038b59"));
-        hacerRecyclerTeclado();
+        CreacionRecycler();
 
     }
-    public TextView sacarTxtCaracter(int num){
+    public TextView seleccionarLetra(int num){
         switch (num) {
             case 0:
                 return findViewById(R.id.Fila1Letra1);
