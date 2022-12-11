@@ -9,8 +9,15 @@ import android.widget.TextView;
 import java.util.Objects;
 
 import cutas.gabriel.wordle.R;
+import cutas.gabriel.wordle.model.Jugador;
+import cutas.gabriel.wordle.model.Palabra;
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class Victoria extends AppCompatActivity {
+
+    Realm realm;
+    RealmResults<Jugador> realmJugadores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +35,7 @@ public class Victoria extends AppCompatActivity {
         txtTiempo.setText("  " + (int) Tiempo);
         txtPuntos.setText("  " + puntuacion);
         txtIntentos.setText("  " +intentos);
-
+        realm = Realm.getDefaultInstance();
+        realmJugadores = realm.where(Jugador.class).findAll();
     }
 }
