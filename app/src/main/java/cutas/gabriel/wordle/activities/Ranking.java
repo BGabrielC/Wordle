@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Objects;
@@ -30,11 +31,18 @@ public class Ranking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("RANKING");
+        getSupportActionBar().setTitle(" ");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerViewRanking);
         realm = Realm.getDefaultInstance();
         realmJugadores = realm.where(Jugador.class).sort("puntos", Sort. DESCENDING).findAll();
         Intent Detalles = new Intent(Ranking.this,DetallesJugador.class);
+        TextView ayuda = findViewById(R.id.txtAyuda);
+
+        if (realmJugadores.size() != 0){
+            ayuda.setText("(Pulsa el nombre para mas detalles)");
+        }else {
+            ayuda.setText("(Por ahora no hay ningún registro)");
+        }
 
 
         RankingAdapter rankingAdapter= new RankingAdapter(realmJugadores, new OnItemClickListener() {

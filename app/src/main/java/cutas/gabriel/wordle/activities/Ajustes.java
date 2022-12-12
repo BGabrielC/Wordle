@@ -38,7 +38,7 @@ public class Ajustes extends AppCompatActivity {
                 realm.beginTransaction();
                 realm.delete(Jugador.class);
                 realm.commitTransaction();
-                Toast error = Toast.makeText(getApplicationContext(),"BASE DE DATOS DE JUGADORES LIMPIADA CON ÉXITO", Toast.LENGTH_LONG);
+                Toast error = Toast.makeText(getApplicationContext(),"BASE DE DATOS DE JUGADORES LIMPIADA CON ÉXITO", Toast.LENGTH_SHORT);
                 error.show();
             }
         });
@@ -49,7 +49,7 @@ public class Ajustes extends AppCompatActivity {
                 realm.beginTransaction();
                 realm.delete(Palabra.class);
                 realm.commitTransaction();
-                Toast error = Toast.makeText(getApplicationContext(),"BASE DE DATOS DE PALABRAS LIMPIADA CON ÉXITO", Toast.LENGTH_LONG);
+                Toast error = Toast.makeText(getApplicationContext(),"BASE DE DATOS DE PALABRAS LIMPIADA CON ÉXITO", Toast.LENGTH_SHORT);
                 error.show();
             }
         });
