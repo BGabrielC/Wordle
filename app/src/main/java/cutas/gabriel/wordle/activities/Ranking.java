@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -33,12 +34,14 @@ public class Ranking extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerViewRanking);
         realm = Realm.getDefaultInstance();
         realmJugadores = realm.where(Jugador.class).sort("puntos", Sort. DESCENDING).findAll();
+        Intent Detalles = new Intent(Ranking.this,DetallesJugador.class);
+
 
         RankingAdapter rankingAdapter= new RankingAdapter(realmJugadores, new OnItemClickListener() {
             @Override
             public void onItemClick(String character) {
-                Toast toast2 = Toast.makeText(getApplicationContext(),character, Toast.LENGTH_SHORT);
-                toast2.show();
+                Detalles.putExtra("nombre",character);
+                startActivity(Detalles);
             }
         });
         recyclerView.setAdapter(rankingAdapter);

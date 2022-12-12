@@ -322,9 +322,11 @@
 
     <Button
         android:id="@+id/btnReiniciar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="134dp"
+        android:layout_height="55dp"
+        android:background="@drawable/boton"
         android:text="REINICIAR"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

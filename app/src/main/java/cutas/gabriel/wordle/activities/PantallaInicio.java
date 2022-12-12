@@ -19,14 +19,10 @@ public class PantallaInicio extends AppCompatActivity {
         setContentView(R.layout.activity_pantalla_inicio);
         Objects.requireNonNull(getSupportActionBar()).hide();
         Button btnJugar = (Button) findViewById(R.id.btnJugar);
-        Button btnReglas = (Button) findViewById(R.id.btnReglas);
         Button btnRanking = (Button) findViewById(R.id.btnRanking);
         Button btnAjustes = (Button) findViewById(R.id.btnAjustes);
         Intent Jugar = new Intent(PantallaInicio.this,Juego.class);
         Intent Ajustes = new Intent(PantallaInicio.this, Ajustes.class);
-
-        Intent Reglas = new Intent(PantallaInicio.this,Reglas.class);
-
         Intent Ranking = new Intent(PantallaInicio.this,Ranking.class);
 
 
@@ -37,12 +33,6 @@ public class PantallaInicio extends AppCompatActivity {
             }
         });
 
-        btnReglas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(Reglas);
-            }
-        });
 
         btnRanking.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -66,14 +66,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.Reglas"
-            android:exported="false"
-            android:parentActivityName=".activities.PantallaInicio">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".activities.Juego"
             android:exported="true"
             android:parentActivityName=".activities.PantallaInicio">

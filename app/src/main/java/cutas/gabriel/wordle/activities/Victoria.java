@@ -2,6 +2,7 @@ package cutas.gabriel.wordle.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ public class Victoria extends AppCompatActivity {
     Realm realm;
     RealmResults<Jugador> realmJugadores;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,12 +56,27 @@ public class Victoria extends AppCompatActivity {
                     Toast error = Toast.makeText(getApplicationContext(),"POR FAVOR INTRODUCE UN NOMBRE PARA ALMACENAR EN EL RANKING", Toast.LENGTH_SHORT);
                     error.show();
                 }else {
+                    if (nombre.length() > 10 ){
+                        Toast error = Toast.makeText(getApplicationContext(),"EL NOMBRE NO PUEDE SUPERAR LOS 10 CARACTERES", Toast.LENGTH_SHORT);
+                        error.show();
+                    }
+                    boolean encontrado = false;
+                    for (int i = 0; i < realmJugadores.size(); i++) {
+                        if (realmJugadores.get(i).getNombre().equals(nombre)){
+                            encontrado = true;
+                        }
+                    }
+                    if (encontrado){
+                        Toast error = Toast.makeText(getApplicationContext(),"YA HAY UN JUGADOR CON EL NOMBRE " + nombre, Toast.LENGTH_SHORT);
+                        error.show();
+                    }else {
+                        Jugador jugador = new Jugador(nombre,Tiempo,intentos,puntuacion);
+                        realm.beginTransaction();
+                        realm.copyToRealmOrUpdate(jugador);
+                        realm.commitTransaction();
+                        startActivity(Volver);
+                    }
 
-                    Jugador jugador = new Jugador(nombre,Tiempo,intentos,puntuacion);
-                    realm.beginTransaction();
-                    realm.copyToRealmOrUpdate(jugador);
-                    realm.commitTransaction();
-                    startActivity(Volver);
                 }
 
             }

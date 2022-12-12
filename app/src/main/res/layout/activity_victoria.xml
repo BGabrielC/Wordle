@@ -109,8 +109,8 @@
 
     <EditText
         android:id="@+id/nombreJugador"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="233dp"
+        android:layout_height="56dp"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="Nombre"
@@ -137,9 +137,11 @@
 
     <Button
         android:id="@+id/btnAceptar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="133dp"
+        android:layout_height="71dp"
         android:text="ACEPTAR"
+        android:textSize="17sp"
+        android:background="@drawable/boton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/nombreJugador"
         app:layout_constraintHorizontal_bias="0.504"

@@ -22,9 +22,11 @@
 
     <Button
         android:id="@+id/btnVolverMenuPrincipal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="189dp"
+        android:layout_height="65dp"
         android:text="MENU PRINCIPAL"
+        android:textSize="17sp"
+        android:background="@drawable/boton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

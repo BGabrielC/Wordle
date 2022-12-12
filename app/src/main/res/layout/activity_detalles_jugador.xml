@@ -6,4 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".activities.DetallesJugador">
 
+    <TextView
+        android:id="@+id/txtNombreDetalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOMBRE"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049" />
+
+    <TextView
+        android:id="@+id/txtTiempoDetalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="492dp"
+        android:text="TIEMPO: "
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtIntentosDetalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="INTENTOS: "
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtTiempoDetalles"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtTiempoDetalles"
+        app:layout_constraintTop_toBottomOf="@+id/txtTiempoDetalles" />
+
+    <TextView
+        android:id="@+id/txtPuntosDetalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="PUNTOS: "
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtIntentosDetalles"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtIntentosDetalles"
+        app:layout_constraintTop_toBottomOf="@+id/txtIntentosDetalles" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,47 +32,43 @@
 
     <Button
         android:id="@+id/btnJugar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="154dp"
+        android:layout_height="74dp"
         android:layout_marginTop="136dp"
         android:text="JUGAR"
+        android:textSize="17sp"
+        android:background="@drawable/boton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btnReglas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="REGLAS"
+        android:id="@+id/btnRanking"
+        android:layout_width="154dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/boton"
+        android:text="RANKING"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="@+id/btnJugar"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnJugar"
         app:layout_constraintTop_toBottomOf="@+id/btnJugar" />
 
     <Button
-        android:id="@+id/btnRanking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="RANKING"
-        app:layout_constraintEnd_toEndOf="@+id/btnReglas"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="@+id/btnReglas"
-        app:layout_constraintTop_toBottomOf="@+id/btnReglas" />
-
-    <Button
         android:id="@+id/btnAjustes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_width="154dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/boton"
         android:text="AJUSTES"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="@+id/btnRanking"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnRanking"
-        app:layout_constraintTop_toBottomOf="@+id/btnReglas" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRanking" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
