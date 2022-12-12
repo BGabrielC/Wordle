@@ -120,12 +120,16 @@ public class Juego extends AppCompatActivity {
                         if (InputUsuario.charAt(i) == palabraRandom.charAt(o)){
                             seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.acertado));
                         }else {
-                            seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.erroneo));
+                            if (palabraRandom.contains(String.valueOf(InputUsuario.charAt(i)))){
+                                seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.posicion_incorrecta));
+                            }else {
+                                seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.erroneo));
+                            }
                         }
+
                     }
+
                 }
-
-
             }
         }
         return false;

@@ -60,7 +60,6 @@ public class TecladoAdapter extends RecyclerView.Adapter<TecladoAdapter.NoteHold
 
             this.titulo.setText(letra.getCaracter());
             this.titulo.setTextColor(Color.parseColor(letra.getColor()));
-            //this.titulo.setBackgroundColor(Color.parseColor();
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
