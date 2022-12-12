@@ -3,6 +3,8 @@ package cutas.gabriel.wordle.activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -163,7 +165,15 @@ public class Juego extends AppCompatActivity {
         realm = Realm.getDefaultInstance();
         realmPalabras = realm.where(Palabra.class).findAll();
         inicio = System.currentTimeMillis();
+        Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
+        Intent Reiniciar = new Intent(Juego.this,Juego.class);
 
+        btnReiniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(Reiniciar);
+            }
+        });
         if (realmPalabras.size() == 0){
             for (int i = 0; i < Utils.getWordsFirstPart().size(); i++) {
                 String temp = Utils.getWordsFirstPart().get(i);

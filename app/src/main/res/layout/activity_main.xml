@@ -7,28 +7,17 @@
     tools:context=".activities.Juego">
 
     <TextView
-        android:id="@+id/txtTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="BUENA SUERTE"
-        android:textSize="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/Fila1Letra1"
         android:layout_width="54dp"
         android:layout_height="54dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="540dp"
         android:background="@drawable/fondotxt"
         android:gravity="center"
         android:text=" "
         android:textSize="38dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Fila1Letra2"
@@ -82,7 +71,7 @@
         android:id="@+id/Fila2Letra1"
         android:layout_width="54dp"
         android:layout_height="54dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/fondotxt"
         android:gravity="center"
@@ -143,7 +132,7 @@
         android:id="@+id/Fila3Letra1"
         android:layout_width="54dp"
         android:layout_height="54dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/fondotxt"
         android:gravity="center"
@@ -204,7 +193,7 @@
         android:id="@+id/Fila4Letra1"
         android:layout_width="54dp"
         android:layout_height="54dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/fondotxt"
         android:gravity="center"
@@ -265,7 +254,7 @@
         android:id="@+id/Fila5Letra1"
         android:layout_width="54dp"
         android:layout_height="54dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/fondotxt"
         android:gravity="center"
@@ -330,5 +319,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnReiniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REINICIAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

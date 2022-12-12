@@ -3,6 +3,7 @@ package cutas.gabriel.wordle.app;
 import android.app.Application;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import cutas.gabriel.wordle.model.Jugador;
 import cutas.gabriel.wordle.model.Palabra;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -19,7 +20,7 @@ public class MyApplication extends Application {
         setUpRealmConfig();
         Realm realm = Realm.getDefaultInstance();
         palabraID = getIdByTable(realm, Palabra.class);
-        jugadorID = getIdByTable(realm, Palabra.class);
+        jugadorID = getIdByTable(realm, Jugador.class);
         realm.close();
 
     }

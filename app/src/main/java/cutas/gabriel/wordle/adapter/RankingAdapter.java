@@ -9,19 +9,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import java.util.List;
 
 import cutas.gabriel.wordle.R;
+import cutas.gabriel.wordle.model.Jugador;
 import cutas.gabriel.wordle.model.Letra;
 
-public class TecladoAdapter extends RecyclerView.Adapter<TecladoAdapter.NoteHolder> {
+public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.NoteHolder> {
 
-    private List<Letra> listData;
+    private List<Jugador> listData;
     private OnItemClickListener itemListener;
 
 
-    public TecladoAdapter(List<Letra> listData, OnItemClickListener listener) {
+    public RankingAdapter(List<Jugador> listData, OnItemClickListener listener) {
         this.itemListener = listener;
         this.listData = listData;
     }
@@ -29,7 +29,7 @@ public class TecladoAdapter extends RecyclerView.Adapter<TecladoAdapter.NoteHold
     @NonNull
     @Override
     public NoteHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.teclado_list,parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rankig_list,parent, false);
         return new NoteHolder(view);
     }
 
@@ -47,23 +47,22 @@ public class TecladoAdapter extends RecyclerView.Adapter<TecladoAdapter.NoteHold
 
     public class NoteHolder extends RecyclerView.ViewHolder {
 
-        TextView titulo;
+        TextView txtJugador;
 
         public NoteHolder(@NonNull  View itemView) {
             super(itemView);
-            titulo = itemView.findViewById(R.id.txtView);
+            txtJugador = itemView.findViewById(R.id.txtNombreJugador);
 
 
         }
 
-        public void assignData(Letra letra, final OnItemClickListener onItemClickListener) {
+        public void assignData(Jugador jugador, final OnItemClickListener onItemClickListener) {
 
-            this.titulo.setText(letra.getCaracter());
-            this.titulo.setTextColor(Color.parseColor(letra.getColor()));
+            this.txtJugador.setText(jugador.getNombre());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onItemClickListener.onItemClick(letra.getCaracter());
+                    onItemClickListener.onItemClick(jugador.getNombre());
                 }
             });
         }

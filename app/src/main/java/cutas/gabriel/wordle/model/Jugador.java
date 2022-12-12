@@ -12,11 +12,13 @@ public class Jugador extends RealmObject {
     private String nombre;
     private double tiempo;
     private int intentos;
+    private int puntos;
 
-    public Jugador(String nombre, double tiempo, int intentos) {
+    public Jugador(String nombre, double tiempo, int intentos, int puntos) {
         this.nombre = nombre;
         this.tiempo = tiempo;
         this.intentos = intentos;
+        this.puntos = puntos;
         this.id = MyApplication.jugadorID.incrementAndGet();
     }
 
@@ -53,5 +55,13 @@ public class Jugador extends RealmObject {
 
     public void setIntentos(int intentos) {
         this.intentos = intentos;
+    }
+
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
     }
 }

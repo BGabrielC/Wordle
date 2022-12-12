@@ -55,7 +55,7 @@ public class Victoria extends AppCompatActivity {
                     error.show();
                 }else {
 
-                    Jugador jugador = new Jugador(nombre,Tiempo,intentos);
+                    Jugador jugador = new Jugador(nombre,Tiempo,intentos,puntuacion);
                     realm.beginTransaction();
                     realm.copyToRealmOrUpdate(jugador);
                     realm.commitTransaction();
