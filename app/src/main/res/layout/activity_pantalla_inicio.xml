@@ -11,7 +11,7 @@
         android:layout_width="154dp"
         android:layout_height="74dp"
         android:background="@drawable/boton"
-        android:text="JUGAR"
+        android:text="@string/jugar"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         android:layout_height="74dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/boton"
-        android:text="RANKING"
+        android:text="@string/ranking"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="@+id/btnJugar"
         app:layout_constraintHorizontal_bias="0.0"
@@ -39,7 +39,7 @@
         android:layout_height="74dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/boton"
-        android:text="AJUSTES"
+        android:text="@string/ajustes"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="@+id/btnRanking"
         app:layout_constraintHorizontal_bias="0.0"
@@ -56,7 +56,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.053"
-        app:srcCompat="@drawable/_8747470733a2f2f692e696d6775722e636f6d2f795870526636302e706e67" />
+        app:srcCompat="@drawable/_8747470733a2f2f692e696d6775722e636f6d2f795870526636302e706e67"
+        android:contentDescription="@string/logo_de_wordle" />
 
     <ImageView
         android:id="@+id/imgGithub"
@@ -68,13 +69,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/github_mark" />
+        app:srcCompat="@drawable/github_mark"
+        android:contentDescription="@string/logo_de_github" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BGabrielC"
+        android:text="@string/bgabrielc"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

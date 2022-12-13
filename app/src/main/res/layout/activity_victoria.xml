@@ -10,7 +10,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HAS GANADO"
+        android:text="@string/has_ganado"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,21 +35,21 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HAS TARDADO  "
+                android:text="@string/has_tardado"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/txtTiempo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="XX.X"
+                android:text="@string/xx_x"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SEGUNDOS"
+                android:text="@string/segundos"
                 android:textSize="22sp" />
         </TableRow>
 
@@ -61,21 +61,21 @@
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="HAS NECESITADO "
+                android:text="@string/has_necesitado"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/txtIntentos"
                 android:layout_width="58dp"
                 android:layout_height="30dp"
-                android:text="X"
+                android:text="@string/x"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="INTENTOS"
+                android:text="@string/intentos2"
                 android:textSize="22sp" />
         </TableRow>
 
@@ -87,21 +87,21 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HAS CONSEGUIDO "
+                android:text="@string/has_conseguido"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/txtPuntuacion"
                 android:layout_width="74dp"
                 android:layout_height="wrap_content"
-                android:text="XXXX"
+                android:text="@string/xxxx"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PUNTOS"
+                android:text="@string/puntos2"
                 android:textSize="22sp" />
         </TableRow>
 
@@ -111,42 +111,39 @@
         android:id="@+id/nombreJugador"
         android:layout_width="233dp"
         android:layout_height="56dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="412dp"
+        android:autofillHints="Nombre"
         android:ems="10"
-        android:hint="Nombre"
+        android:hint="@string/nombre2"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="460dp"
-        android:text="INTRODUCE TU NOMBRE"
+        android:text="@string/introduce_tu_nombre"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.295" />
 
     <Button
         android:id="@+id/btnAceptar"
         android:layout_width="133dp"
         android:layout_height="71dp"
-        android:text="ACEPTAR"
-        android:textSize="17sp"
+        android:layout_marginBottom="404dp"
         android:background="@drawable/boton"
+        android:text="@string/aceptar"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/nombreJugador"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/nombreJugador"
-        app:layout_constraintTop_toBottomOf="@+id/nombreJugador"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toEndOf="@+id/nombreJugador" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

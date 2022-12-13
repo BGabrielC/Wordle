@@ -10,7 +10,7 @@
         android:id="@+id/txtNombreDetalles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NOMBRE"
+        android:text="@string/nombre"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,8 +23,8 @@
         android:id="@+id/txtTiempoDetalles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="492dp"
-        android:text="TIEMPO: "
+        android:layout_marginBottom="424dp"
+        android:text="@string/tiempo"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,26 +32,27 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/txtPuntosDetalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/puntos"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtIntentosDetalles"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtIntentosDetalles"
+        app:layout_constraintTop_toBottomOf="@+id/txtIntentosDetalles" />
+
+    <TextView
         android:id="@+id/txtIntentosDetalles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="INTENTOS: "
+        android:layout_marginTop="44dp"
+        android:text="@string/intentos"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="@+id/txtTiempoDetalles"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txtTiempoDetalles"
         app:layout_constraintTop_toBottomOf="@+id/txtTiempoDetalles" />
 
-    <TextView
-        android:id="@+id/txtPuntosDetalles"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="PUNTOS: "
-        android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtIntentosDetalles"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtIntentosDetalles"
-        app:layout_constraintTop_toBottomOf="@+id/txtIntentosDetalles" />
 </androidx.constraintlayout.widget.ConstraintLayout>

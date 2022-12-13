@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Wordle</string>
     <string name="jugadores">JUGADORES</string>
     <string name="palabras">PALABRAS</string>
     <string name="que_base_de_datos_deseas_reiniciar">¿QUE BASE DE DATOS DESEAS REINICIAR?</string>
