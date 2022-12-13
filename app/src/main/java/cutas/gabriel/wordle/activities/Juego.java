@@ -71,7 +71,7 @@ public class Juego extends AppCompatActivity {
                                     startActivity(derrota);
 
                                 }
-                                Toast toast2 = Toast.makeText(getApplicationContext(),"Ha perdido "+palabraRandom, Toast.LENGTH_SHORT);
+                                Toast toast2 = Toast.makeText(getApplicationContext(),palabraRandom, Toast.LENGTH_SHORT);
                                 toast2.show();
                             }
                             InputUsuario ="";
@@ -121,16 +121,23 @@ public class Juego extends AppCompatActivity {
                     if(i==o){
                         if (InputUsuario.charAt(i) == palabraRandom.charAt(o)){
                             seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.acertado));
+                            Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).setColor("#044512");
                         }else {
                             if (palabraRandom.contains(String.valueOf(InputUsuario.charAt(i)))){
                                 seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.posicion_incorrecta));
+                                if (!Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).getColor().equals("#044512")){
+                                    Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).setColor("#b1a517");
+                                }
+
+
                             }else {
                                 seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.erroneo));
+                                if (!Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).getColor().equals("#044512") && !Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).getColor().equals("#b1a517")){
+                                    Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).setColor("#B1B1B1");
+                                }
                             }
                         }
-
                     }
-
                 }
             }
         }
@@ -228,11 +235,12 @@ public class Juego extends AppCompatActivity {
         teclado.put("N",new Letra("N"));
         teclado.put("M",new Letra("M"));
         teclado.put(" ",new Letra(" "));
-        teclado.put("⌫",new Letra("⌫","#ba4b4b"));//"#ba4b4b"));
-        teclado.put("➥",new Letra("➥","#038b59")); //"#038b59"));
+        teclado.put("⌫",new Letra("⌫","#878787"));
+        teclado.put("➥",new Letra("➥","#878787"));
         CreacionRecycler();
 
     }
+
     public TextView seleccionarLetra(int num){
         switch (num) {
             case 0:

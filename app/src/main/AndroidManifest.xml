@@ -16,7 +16,8 @@
         <activity
             android:name=".activities.Ajustes"
             android:exported="false"
-            android:parentActivityName=".activities.PantallaInicio">
+            android:parentActivityName=".activities.PantallaInicio"
+            android:screenOrientation="portrait">
 
             <meta-data
                 android:name="android.app.lib_name"
@@ -25,28 +26,32 @@
         <activity
             android:name=".activities.DetallesJugador"
             android:exported="false"
-            android:parentActivityName=".activities.Ranking">
+            android:parentActivityName=".activities.Ranking"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".activities.Victoria"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".activities.Derrota"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".activities.PantallaInicio"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,7 +65,8 @@
         <activity
             android:name=".activities.Ranking"
             android:exported="false"
-            android:parentActivityName=".activities.PantallaInicio">
+            android:parentActivityName=".activities.PantallaInicio"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -68,7 +74,8 @@
         <activity
             android:name=".activities.Juego"
             android:exported="true"
-            android:parentActivityName=".activities.PantallaInicio">
+            android:parentActivityName=".activities.PantallaInicio"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
