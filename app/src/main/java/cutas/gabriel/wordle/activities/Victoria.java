@@ -59,23 +59,25 @@ public class Victoria extends AppCompatActivity {
                     if (nombre.length() > 10 ){
                         Toast error = Toast.makeText(getApplicationContext(),"EL NOMBRE NO PUEDE SUPERAR LOS 10 CARACTERES", Toast.LENGTH_SHORT);
                         error.show();
-                    }
-                    boolean encontrado = false;
-                    for (int i = 0; i < realmJugadores.size(); i++) {
-                        if (realmJugadores.get(i).getNombre().equals(nombre)){
-                            encontrado = true;
+                    }else {
+                        boolean encontrado = false;
+                        for (int i = 0; i < realmJugadores.size(); i++) {
+                            if (realmJugadores.get(i).getNombre().equals(nombre)){
+                                encontrado = true;
+                            }
+                        }
+                        if (encontrado){
+                            Toast error = Toast.makeText(getApplicationContext(),"YA HAY UN JUGADOR CON EL NOMBRE " + nombre, Toast.LENGTH_SHORT);
+                            error.show();
+                        }else {
+                            Jugador jugador = new Jugador(nombre,Tiempo,intentos,puntuacion);
+                            realm.beginTransaction();
+                            realm.copyToRealmOrUpdate(jugador);
+                            realm.commitTransaction();
+                            startActivity(Volver);
                         }
                     }
-                    if (encontrado){
-                        Toast error = Toast.makeText(getApplicationContext(),"YA HAY UN JUGADOR CON EL NOMBRE " + nombre, Toast.LENGTH_SHORT);
-                        error.show();
-                    }else {
-                        Jugador jugador = new Jugador(nombre,Tiempo,intentos,puntuacion);
-                        realm.beginTransaction();
-                        realm.copyToRealmOrUpdate(jugador);
-                        realm.commitTransaction();
-                        startActivity(Volver);
-                    }
+
 
                 }
 
