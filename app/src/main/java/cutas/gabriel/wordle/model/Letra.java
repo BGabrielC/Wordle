@@ -1,5 +1,7 @@
 package cutas.gabriel.wordle.model;
 
+import androidx.fragment.app.FragmentOnAttachListener;
+
 public class Letra{
 
     private String color, caracter;
@@ -30,4 +32,5 @@ public class Letra{
     public void setCaracter(String caracter) {
         this.caracter = caracter;
     }
+
 }
