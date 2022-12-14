@@ -22,9 +22,6 @@ import io.realm.RealmResults;
 import io.realm.Sort;
 
 public class Ranking extends AppCompatActivity {
-    RecyclerView recyclerView;
-    Realm realm;
-    RealmResults<Jugador> realmJugadores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +29,9 @@ public class Ranking extends AppCompatActivity {
         setContentView(R.layout.activity_ranking);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(" ");
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewRanking);
-        realm = Realm.getDefaultInstance();
-        realmJugadores = realm.where(Jugador.class).sort("puntos", Sort. DESCENDING).findAll();
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewRanking);
+        Realm realm = Realm.getDefaultInstance();
+        RealmResults<Jugador> realmJugadores = realm.where(Jugador.class).sort("puntos", Sort. DESCENDING).findAll();
         Intent Detalles = new Intent(Ranking.this,DetallesJugador.class);
         TextView ayuda = findViewById(R.id.txtAyuda);
 

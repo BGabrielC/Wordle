@@ -56,7 +56,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.053"
-        app:srcCompat="@drawable/_8747470733a2f2f692e696d6775722e636f6d2f795870526636302e706e67"
+        app:srcCompat="@drawable/logo_wordle"
         android:contentDescription="@string/logo_de_wordle" />
 
     <ImageView
@@ -69,7 +69,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/github_mark"
+        app:srcCompat="@drawable/logo_github_blanco"
         android:contentDescription="@string/logo_de_github" />
 
     <TextView

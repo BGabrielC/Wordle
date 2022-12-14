@@ -21,9 +21,6 @@ import io.realm.RealmResults;
 
 public class Victoria extends AppCompatActivity {
 
-    Realm realm;
-    RealmResults<Jugador> realmJugadores;
-
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +42,8 @@ public class Victoria extends AppCompatActivity {
         txtTiempo.setText("  " + (int) Tiempo);
         txtPuntos.setText("  " + puntuacion);
         txtIntentos.setText("  " +intentos);
-        realm = Realm.getDefaultInstance();
-        realmJugadores = realm.where(Jugador.class).findAll();
+        Realm realm = Realm.getDefaultInstance();
+        RealmResults<Jugador> realmJugadores = realm.where(Jugador.class).findAll();
 
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +59,7 @@ public class Victoria extends AppCompatActivity {
                     }else {
                         boolean encontrado = false;
                         for (int i = 0; i < realmJugadores.size(); i++) {
+                            assert realmJugadores.get(i) != null;
                             if (realmJugadores.get(i).getNombre().equals(nombre)){
                                 encontrado = true;
                             }

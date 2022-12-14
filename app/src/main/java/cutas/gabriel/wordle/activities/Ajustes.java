@@ -16,9 +16,7 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 public class Ajustes extends AppCompatActivity {
-    Realm realm;
-    RealmResults<Palabra> realmPalabras;
-    RealmResults<Jugador> realmJugadores;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +24,7 @@ public class Ajustes extends AppCompatActivity {
         setContentView(R.layout.activity_ajustes);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("AJUSTES");
-        realm = Realm.getDefaultInstance();
-        realmPalabras = realm.where(Palabra.class).findAll();
-        realmJugadores = realm.where(Jugador.class).findAll();
+        Realm realm = Realm.getDefaultInstance();
         Button btnPalabras = (Button) findViewById(R.id.reiniciarPalabras);
         Button btnJugadores = (Button) findViewById(R.id.reiniciarJugadores);
 

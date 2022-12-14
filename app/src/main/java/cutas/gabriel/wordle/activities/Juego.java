@@ -30,26 +30,22 @@ import io.realm.RealmResults;
 
 public class Juego extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    Realm realm;
-    RealmResults<Palabra> realmPalabras;
     LinkedHashMap<String, Letra> teclado;
-    List<Letra> listaLetras;
-    String palabraRandom="";
-    int numCaracter =0;
-    String InputUsuario ="";
+    String palabraAleatoria = "";
+    int numeroDeLetras = 0;
+    String InputUsuario = "";
     Long inicio;
 
-    public void CreacionRecycler(){
-        recyclerView = findViewById(R.id.recyclerViewTeclado);
-        listaLetras = new ArrayList<Letra>(teclado.values());
-        final TecladoAdapter tecladoAdapter = new TecladoAdapter(listaLetras, new OnItemClickListener() {
+    public void ActualizarRecycler(){
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewTeclado);
+        List<Letra> listaLetras = new ArrayList<Letra>(teclado.values());
+        final TecladoAdapter adaptadorTeclado = new TecladoAdapter(listaLetras, new OnItemClickListener() {
             @Override
             public void onItemClick(String letra) {
                 if (letra.equals("⌫")){
                     if (Objects.requireNonNull(teclado.get(letra)).getColor().equals("#ba4b4b")){
-                        numCaracter -= 1;
-                        seleccionarLetra(numCaracter).setText(" ");
+                        numeroDeLetras -= 1;
+                        seleccionarLetra(numeroDeLetras).setText(" ");
                         InputUsuario = InputUsuario.substring(0, InputUsuario.length() - 1);
                     }
                 }else if(letra.equals("➥")){
@@ -60,78 +56,78 @@ public class Juego extends AppCompatActivity {
                                 double tiempo = (double) ((fin - inicio)/1000);
                                 Intent victoria = new Intent(Juego.this,Victoria.class);
                                 victoria.putExtra("tiempo", tiempo);
-                                victoria.putExtra("numCaracteres",numCaracter);
+                                victoria.putExtra("numCaracteres", numeroDeLetras);
                                 startActivity(victoria);
                             }else{
-                                if(numCaracter!=29){
-                                    numCaracter += 1;
+                                if(numeroDeLetras != 29){
+                                    numeroDeLetras += 1;
                                 }else {
                                     Intent derrota = new Intent(Juego.this,Derrota.class);
-                                    derrota.putExtra("palabra",palabraRandom);
+                                    derrota.putExtra("palabra", palabraAleatoria);
                                     startActivity(derrota);
 
                                 }
-                                Toast toast2 = Toast.makeText(getApplicationContext(),palabraRandom, Toast.LENGTH_SHORT);
-                                toast2.show();
+                                //Uso este toast para hacer pruebas, si lo quitamos el juego esta completo
+                                Toast palabraAleatorio = Toast.makeText(getApplicationContext(), palabraAleatoria, Toast.LENGTH_SHORT);
+                                palabraAleatorio.show();
                             }
                             InputUsuario ="";
 
                         }else{
-                            Toast toast2 = Toast.makeText(getApplicationContext(),"Esta palabra no esta en nuestro diccionario", Toast.LENGTH_SHORT);
-                            toast2.show();
+                            Toast palabraNoEncontrada = Toast.makeText(getApplicationContext(),"Esta palabra no esta en nuestro diccionario", Toast.LENGTH_SHORT);
+                            palabraNoEncontrada.show();
 
                         }
                     }
                 }else if(!letra.equals(" ") && Objects.requireNonNull(teclado.get("➥")).getColor().equals("#878787")){
-                    if(numCaracter != 29){
-                        seleccionarLetra(numCaracter).setText(letra);
+                    if(numeroDeLetras != 29){
+                        seleccionarLetra(numeroDeLetras).setText(letra);
                         InputUsuario += letra;
-                        numCaracter += 1;
+                        numeroDeLetras += 1;
                     }
                 }
-                if (numCaracter==5 || numCaracter==11 || numCaracter==17 || numCaracter==23 || numCaracter==29){
+                if (numeroDeLetras ==5 || numeroDeLetras ==11 || numeroDeLetras ==17 || numeroDeLetras ==23 || numeroDeLetras ==29){
                     Objects.requireNonNull(teclado.get("➥")).setColor("#038b59");
                 }else{
                     Objects.requireNonNull(teclado.get("➥")).setColor("#878787");
                 }
-                if (numCaracter==0 || numCaracter==6 || numCaracter==12 || numCaracter==18 || numCaracter==24){
+                if (numeroDeLetras ==0 || numeroDeLetras ==6 || numeroDeLetras ==12 || numeroDeLetras ==18 || numeroDeLetras ==24){
                     Objects.requireNonNull(teclado.get("⌫")).setColor("#878787");
                 }else{
                     Objects.requireNonNull(teclado.get("⌫")).setColor("#ba4b4b");
                 }
-                CreacionRecycler();
+                ActualizarRecycler();
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
-        recyclerView.setAdapter(tecladoAdapter);
+        recyclerView.setAdapter(adaptadorTeclado);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 7));
-
     }
     public boolean existePalabra(){
         return Utils.getWordsFirstPart().contains(InputUsuario);
     }
     @SuppressLint("UseCompatLoadingForDrawables")
     public boolean comprobarPalabra(){
-        if (InputUsuario.equals(palabraRandom)){
+        if (InputUsuario.equals(palabraAleatoria)){
             return true;
         }else{
 
             for (int i = 0; i < 5; i++){
                 for (int o = 0; o < 5; o++){
                     if(i==o){
-                        if (InputUsuario.charAt(i) == palabraRandom.charAt(o)){
-                            seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.acertado));
+                        if (InputUsuario.charAt(i) == palabraAleatoria.charAt(o)){
+                            seleccionarLetra(numeroDeLetras -5+i).setBackground(getResources().getDrawable(R.drawable.letra_acertada));
                             Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).setColor("#044512");
                         }else {
-                            if (palabraRandom.contains(String.valueOf(InputUsuario.charAt(i)))){
-                                seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.posicion_incorrecta));
+                            if (palabraAleatoria.contains(String.valueOf(InputUsuario.charAt(i)))){
+                                seleccionarLetra(numeroDeLetras -5+i).setBackground(getResources().getDrawable(R.drawable.letra_acertada_posicion_incorrecta));
                                 if (!Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).getColor().equals("#044512")){
                                     Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).setColor("#b1a517");
                                 }
 
 
                             }else {
-                                seleccionarLetra(numCaracter-5+i).setBackground(getResources().getDrawable(R.drawable.erroneo));
+                                seleccionarLetra(numeroDeLetras -5+i).setBackground(getResources().getDrawable(R.drawable.letra_equivocada));
                                 if (!Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).getColor().equals("#044512") && !Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).getColor().equals("#b1a517")){
                                     Objects.requireNonNull(teclado.get(String.valueOf(InputUsuario.charAt(i)))).setColor("#B1B1B1");
                                 }
@@ -169,8 +165,8 @@ public class Juego extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        realm = Realm.getDefaultInstance();
-        realmPalabras = realm.where(Palabra.class).findAll();
+        Realm realm = Realm.getDefaultInstance();
+        RealmResults<Palabra> realmPalabras = realm.where(Palabra.class).findAll();
         inicio = System.currentTimeMillis();
         Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
         Intent Reiniciar = new Intent(Juego.this,Juego.class);
@@ -202,8 +198,8 @@ public class Juego extends AppCompatActivity {
 
         do {
             int numeroAleatorio = (int) (Math.random() * realmPalabras.size());
-            palabraRandom = Objects.requireNonNull(realm.where(Palabra.class).equalTo("id", numeroAleatorio).findFirst()).getPalabra();
-        }while (compruebaSiSeRepiteLetra(palabraRandom));
+            palabraAleatoria = Objects.requireNonNull(realm.where(Palabra.class).equalTo("id", numeroAleatorio).findFirst()).getPalabra();
+        }while (compruebaSiSeRepiteLetra(palabraAleatoria));
 
 
         teclado=new LinkedHashMap<String, Letra>();
@@ -237,7 +233,7 @@ public class Juego extends AppCompatActivity {
         teclado.put(" ",new Letra(" "));
         teclado.put("⌫",new Letra("⌫","#878787"));
         teclado.put("➥",new Letra("➥","#878787"));
-        CreacionRecycler();
+        ActualizarRecycler();
 
     }
 
